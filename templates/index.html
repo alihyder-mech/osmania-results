@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>Osmania University Results - 2006</title>
+    <script language="JavaScript">
+        function FrontPage_Form1_Validator(theForm) {
+            if (theForm.htno.value == "") {
+                alert("Please enter a value for the \"Hall ticket Number\" field.");
+                theForm.htno.focus();
+                return (false);
+            }
+
+            if (theForm.htno.value.length < 12) {
+                alert("Please enter at least   12 characters in the \"Hall ticket Number\" field.");
+                theForm.htno.focus();
+                return (false);
+            }
+
+            if (theForm.htno.value.length > 12) {
+                alert("Please enter not more than  12  characters in the \"Hall ticket Number\" field.");
+                theForm.htno.focus();
+                return (false);
+            }
+            return (true);
+        }
+    </script>
+</head>
+
+<body topmargin="0" leftmargin="0" bgcolor="#FAF0D8">
+
+    <form method="post" action="" name="FrontPage_Form1" onsubmit="return FrontPage_Form1_Validator(this)">
+        <input type="hidden" name="mbstatus" value="SEARCH">
+
+        <div align="center">
+            <center>
+                <table style="border-collapse: collapse" id="AutoNumber1" width="90%" cellspacing="1"
+                    bordercolor="#111111" border="0">
+                    <tbody>
+                        <tr>
+                            <td width="100%">
+                                <p align="center">
+                                    <font size="2" face="Arial"><b> BE(CBCS) ( 2,4,6) Sem Backlogs Sept-2021 Results
+                                        </b></font>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%">
+                                <p align="right">
+                                    <font size="1" face="Arial">22-Dec-2021 </font>
+                                </p>
+                            </td>
+                        </tr>
+
+                        {% block content %} {% endblock %}
+                        
+
+                        <tr>
+                            <td width="100%">
+                                <div align="center">
+                                    <center>
+                                        <table style="border-collapse: collapse" id="AutoNumber6" width="80%"
+                                            height="19" cellspacing="1" bordercolor="#111111" border="1">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="100%" height="16" bgcolor="#FEFCF5" align="center"><b>
+                                                            <font size="2" face="Arial">Enter Hall Ticket No. :
+                                                                <input type="text" name="htno" size="15" maxlength="12"
+                                                                    value="">
+                                                                <input type="image" name="Submit" value="Go"
+                                                                    src="gobut.gif">
+                                                            </font>
+                                                        </b></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td width="100%" align="center">
+                                                        <font size="2" face="verdana" color="#FF0000"><b> Please Enter
+                                                                12 Digit Hall Ticket Number
+                                                                Ex: 245320748117, 245320748101. </b></font>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </center>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </center>
+        </div>
+    </form>
+
+
+
+</body>
+
+</html>

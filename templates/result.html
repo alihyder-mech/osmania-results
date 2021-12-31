@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<tr>  <td width="100%">
+    <div align="center">    <center>
+      <table style="border-collapse: collapse" id="AutoNumber2" width="90%" cellspacing="1" bordercolor="#111111" border="0" bgcolor="#FFFFFF">
+         <tbody><tr> <td width="100%">
+          <table style="border-collapse: collapse" id="AutoNumber3" width="100%" cellspacing="1" bordercolor="#111111" border="1"> 
+            <tbody><tr> <td colspan="4" width="100%" bgcolor="#EDC987" align="center"> 
+              <b><font size="2" face="Arial">Personal Details</font></b></td></tr>
+            <tr> <td width="17%" bgcolor="#FEFCF5"><font size="2" face="Arial">Hall Ticket No.</font></td>
+              <td width="33%"><b> <font size="2" face="Arial" color="#FF0000">&nbsp;{{ personal_data['Hall Ticket No.'] }}</font></b></td>
+              <td width="16%" bgcolor="#FEFCF5"> <font size="2" face="Arial">Gender</font></td>
+
+              
+              <td width="34%"><b> <font size="2" face="Arial">{{ personal_data['Gender']}}</font></b></td>
+            </tr>
+
+            <tr> <td width="17%" bgcolor="#FEFCF5"><font size="2" face="Arial">Name</font></td>
+              <td width="33%"><b><font size="2" face="Arial"> {{ personal_data['Name'] }}</font></b></td>
+              <td width="16%" bgcolor="#FEFCF5"><font size="2" face="Arial">Father's Name</font></td>
+              <td width="34%"><b><font size="2" face="Arial">{{ personal_data["Father's Name"]}}</font></b></td>
+            </tr>
+
+            <tr> <td width="17%" bgcolor="#FEFCF5"><font size="2" face="Arial">Course</font></td>
+              <td width="33%"><b><font size="2" face="Arial">{{ personal_data['Course'] }}</font></b></td>
+              <td width="16%" bgcolor="#FEFCF5"><font size="2" face="Arial">Medium</font></td>
+              
+              <td width="34%"><b><font size="2" face="Arial"> {{ personal_data['Medium'] }}</font></b></td>
+            </tr>
+          </tbody></table>
+          </td>
+        </tr>
+
+        <tr> <td width="100%">
+           <table style="border-collapse: collapse" id="AutoNumber4" width="100%" height="58" cellspacing="1" bordercolor="#111111" border="1">
+            <tbody><tr> <td colspan="5" width="100%" height="12" bgcolor="#EDC987" align="center"><b> <font size="2" face="Arial">Marks Details</font></b></td> 
+            </tr>
+            <tr><td width="10%" height="16" bgcolor="#FAF0D8" align="center"><font size="2" face="Arial">Sub Code</font></td>
+              <td width="50%" height="16" bgcolor="#FAF0D8" align="left"><font size="2" face="Arial">Subject Name</font></td>
+              <td width="10%" height="16" bgcolor="#FAF0D8" align="center"><font size="2" face="Arial">Credits</font></td>
+              <td width="10%%" height="16" bgcolor="#FAF0D8" align="center"><font size="2" face="Arial">Grade Points</font></td>
+              <td width="20%" height="16" bgcolor="#FAF0D8" align="center"><font size="2" face="Arial">Grade Secured</font></td>
+             </tr>
+
+             {%for sub in personal_data['grade_data']%}
+          <tr><td width="10%" height="19" align="center"><b><font size="2" face="Arial">&nbsp;{{ sub[0] }} </font></b></td>
+              <td width="50%" height="19" align="left"><b><font size="2" face="Arial">&nbsp;{{ sub[1] }} </font></b></td>
+              <td width="10%" height="19" align="center"><b><font size="2" face="Arial">&nbsp;{{ sub[2] }} </font></b></td>
+              <td width="10%" height="19" align="center"><b><font size="2" face="Arial">&nbsp;{{ sub[3] }} </font></b></td>
+              <td width="20%" height="19" align="center"><b><font size="2" face="Arial">&nbsp;{{ sub[4] }} </font></b></td>
+            </tr>
+            {%endfor%}
+  
+         
+
+          </tbody></table>
+          </td>
+        </tr>
+
+        <tr> <td width="100%">
+          <table style="border-collapse: collapse" id="AutoNumber5" width="100%" cellspacing="1" bordercolor="#111111" border="1">
+            <tbody><tr> <td colspan="3" width="100%" bgcolor="#EDC987" align="center"> <b><font size="2" face="Arial">Result</font></b></td>
+            </tr>
+
+         <tr> 
+              <td width="20%" bgcolor="#FAF0D8" align="center"><b><font size="2" face="Arial">Semester</font></b></td>
+              <td width="50%" bgcolor="#FAF0D8" align="center"> <b><font size="2" face="Arial">Result With SGPA</font></b></td>
+              <td width="30%" bgcolor="#FAF0D8" align="center"> <b><font size="2" face="Arial">Over all CGPA</font></b></td>
+            </tr>
+
+  
+         <tr> 
+              <td width="20%" align="center"><b> <font size="2" face="Arial">  6 </font></b></td>
+              <td width="50%" align="center"><b> <font size="2" face="Arial">  PASSED-{{ personal_data['Result']}} </font></b></td>
+              <td width="30%" align="center"><b> <font size="2" face="Arial">  - </font></b></td>
+            </tr>
+  
+
+          </tbody></table>
+          </td>
+        </tr>
+        <tr> <td width="100%" align="center">
+          <font size="2" face="Arial" color="#000080">This information is provided to the candidate on his/her online request and is only a prototype list.</font> </td> 
+        </tr>
+        <tr> <td width="100%" align="center">
+          <input name="print" type="button" value="Print Page" onclick="window.print()"> </td>
+        </tr>
+
+
+        <tr> <td width="100%" align="right"><font size="2" face="verdana">   
+        0 &nbsp;</font></td>   
+        </tr>
+
+
+      </tbody></table>
+      </center>
+    </div>
+    </td>
+  </tr>
+{% endblock %}
