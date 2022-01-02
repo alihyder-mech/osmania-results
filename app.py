@@ -54,9 +54,15 @@ def get_data(htno):
     gpa = 0
     cred = 0 
     for sub in grade_data:
-        gpa += int(sub[2])*sub[3]
-        cred +=  int(sub[2])
+        holder = sub[2]
+        if ( sub[2] == '='):
+            holder ='0'
+        
+
+        gpa += float(holder)*sub[3]
+        cred +=  float(holder)
     sgpa =round(gpa/cred, 2)
+    
 
     personal_data['grade_data'] = grade_data
     personal_data["Result"] = str(sgpa)
